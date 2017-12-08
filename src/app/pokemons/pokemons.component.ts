@@ -16,4 +16,10 @@ export class PokemonsComponent implements OnInit {
   ngOnInit() {
   }
 
+selectedPokemon: Pokemon;
+
+onSelect(pokemon: Pokemon): void {
+  this.selectedPokemon = pokemon;
+}
+
 }
