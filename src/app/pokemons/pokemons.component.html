@@ -1,14 +1,15 @@
 <h2>My Pokemon</h2>
 <ul class="pokemons">
-  <li *ngFor="let pokemon of pokemons" (click)="onSelect(pokemon)">
+  <li *ngFor="let pokemon of pokemons" [class.selected]="pokemon === selectedPokemon" (click)="onSelect(pokemon)">
     <span class="badge">{{pokemon.id}}</span> {{pokemon.name}}
   </li>
 </ul>
-
-<h2>{{ selectedPokemon.name | uppercase }} Details</h2>
-<div><span>id: </span>{{selectedPokemon.id}}</div>
-<div>
-  <label>name:
+<div *ngIf="selectedPokemon">
+  <h2>{{ selectedPokemon.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{selectedPokemon.id}}</div>
+  <div>
+    <label>name:
     <input [(ngModel)]="selectedPokemon.name" placeholder="name">
   </label>
+  </div>
 </div>
