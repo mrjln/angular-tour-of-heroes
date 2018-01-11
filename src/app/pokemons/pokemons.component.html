@@ -4,12 +4,5 @@
     <span class="badge">{{pokemon.id}}</span> {{pokemon.name}}
   </li>
 </ul>
-<div *ngIf="selectedPokemon">
-  <h2>{{ selectedPokemon.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{selectedPokemon.id}}</div>
-  <div>
-    <label>name:
-    <input [(ngModel)]="selectedPokemon.name" placeholder="name">
-  </label>
-  </div>
-</div>
+
+<app-pokemon-detail [pokemon]="selectedPokemon"></app-pokemon-detail>
